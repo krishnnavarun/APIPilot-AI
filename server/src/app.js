@@ -6,6 +6,9 @@ import healthRouter from './routes/health.route.js';
 import authRouter from './routes/auth.route.js';
 import workspaceRouter from './routes/workspace.route.js';
 import projectRouter from './routes/project.route.js';
+import endpointRouter from './routes/endpoint.route.js';
+import testCaseRouter from './routes/testcase.route.js';
+import aiRouter from './routes/ai.route.js';
 import { errorHandler, notFoundHandler } from './middleware/error-handler.js';
 import { env } from './config/env.js';
 
@@ -32,6 +35,9 @@ app.use('/api/v1', healthRouter);
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/workspaces', workspaceRouter);
 app.use('/api/v1/projects', projectRouter);
+app.use('/api/v1/endpoints', endpointRouter);
+app.use('/api/v1/tests', testCaseRouter);
+app.use('/api/v1/ai', aiRouter);
 app.use(notFoundHandler);
 app.use(errorHandler);
 

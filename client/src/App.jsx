@@ -10,6 +10,9 @@ import LoginPage from '@/pages/LoginPage';
 import RegisterPage from '@/pages/RegisterPage';
 import DashboardPage from '@/pages/DashboardPage';
 import LandingPage from '@/pages/LandingPage';
+import APIBuilderPage from '@/pages/APIBuilderPage';
+import CollectionsPage from '@/pages/CollectionsPage';
+import TestRunnerPage from '@/pages/TestRunnerPage';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -43,6 +46,30 @@ export default function App() {
         element={
           <ProtectedRoute>
             <DashboardPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/builder"
+        element={
+          <ProtectedRoute>
+            <APIBuilderPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/collections"
+        element={
+          <ProtectedRoute>
+            <CollectionsPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/runner"
+        element={
+          <ProtectedRoute>
+            <TestRunnerPage />
           </ProtectedRoute>
         }
       />

@@ -1,13 +1,9 @@
 import axios from 'axios';
 import authService from './authService';
-
-const API_BASE = 'http://localhost:8080/api/v1';
+import { API_BASE, authHeader } from './http';
 
 const getAuthHeader = () => {
-  const token = authService.getToken();
-  return {
-    Authorization: `Bearer ${token}`,
-  };
+  return authHeader(authService.getToken());
 };
 
 const projectService = {

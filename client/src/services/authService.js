@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-const API_BASE = 'http://localhost:8080/api/v1';
+import { API_BASE } from './http';
 
 const authService = {
   /**
@@ -11,7 +10,7 @@ const authService = {
   register: async (credentials) => {
     try {
       const response = await axios.post(`${API_BASE}/auth/register`, credentials);
-      return response.data;
+      return response.data.user;
     } catch (error) {
       throw error.response?.data?.message || 'Registration failed';
     }

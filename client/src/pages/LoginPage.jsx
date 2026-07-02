@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
-import { loginStart, loginSuccess, loginFailure, clearError } from '@/redux/authSlice';
+import { loginStart, loginSuccess, loginFailure } from '@/redux/authSlice';
 import authService from '@/services/authService';
 import toast from 'react-hot-toast';
 import { Sparkles } from 'lucide-react';
@@ -110,16 +110,6 @@ export default function LoginPage() {
             {fieldErrors.password && (
               <p className="text-red-400 text-xs mt-1">{fieldErrors.password}</p>
             )}
-          </div>
-
-          {/* Forgot Password Link */}
-          <div className="flex justify-end">
-            <Link
-              to="/forgot-password"
-              className="text-xs text-[#63b3ff] hover:text-[#7fbfff] transition"
-            >
-              Forgot password?
-            </Link>
           </div>
 
           {/* Submit Button */}

@@ -59,6 +59,10 @@ const authSlice = createSlice({
     getMeFailure: (state, action) => {
       state.isLoading = false;
       state.error = action.payload;
+      state.user = null;
+      state.token = null;
+      state.isAuthenticated = false;
+      localStorage.removeItem('authToken');
     },
 
     // Logout
