@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
+import authReducer from './authSlice.js';
 
-const rootReducer = {
-  app: (state = { initializedAt: Date.now() }) => state,
-};
+const appReducer = (state = { initializedAt: Date.now() }) => state;
 
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    app: appReducer,
+    auth: authReducer,
+  },
   devTools: import.meta.env.DEV,
 });

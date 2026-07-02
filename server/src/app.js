@@ -3,6 +3,9 @@ import express from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import healthRouter from './routes/health.route.js';
+import authRouter from './routes/auth.route.js';
+import workspaceRouter from './routes/workspace.route.js';
+import projectRouter from './routes/project.route.js';
 import { errorHandler, notFoundHandler } from './middleware/error-handler.js';
 import { env } from './config/env.js';
 
@@ -26,6 +29,9 @@ app.get('/api/v1', (_req, res) => {
 });
 
 app.use('/api/v1', healthRouter);
+app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/workspaces', workspaceRouter);
+app.use('/api/v1/projects', projectRouter);
 app.use(notFoundHandler);
 app.use(errorHandler);
 
