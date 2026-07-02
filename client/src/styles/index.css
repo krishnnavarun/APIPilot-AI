@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+:root {
+  color-scheme: dark;
+  --canvas: #090b10;
+  --foreground: #e6ebf2;
+  --muted: #aab6c6;
+  --accent: #63b3ff;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Sora', sans-serif;
+  background: var(--canvas);
+  color: var(--foreground);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mesh {
+  background-image: radial-gradient(at 20% 20%, rgba(40, 78, 132, 0.34) 0px, transparent 55%),
+    radial-gradient(at 78% 16%, rgba(75, 95, 122, 0.24) 0px, transparent 50%),
+    radial-gradient(at 72% 82%, rgba(22, 52, 94, 0.3) 0px, transparent 55%),
+    radial-gradient(at 10% 78%, rgba(48, 48, 68, 0.22) 0px, transparent 45%);
+}
